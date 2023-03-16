@@ -1,4 +1,28 @@
-#timer {
-    margin-left: 1650px;
+body{
+    background-color: rgb(197, 189, 178);
+}
 
+#timer {
+    text-align: left;
+    margin: 0;
+
+}
+
+header {
+    text-align: center;
+    margin-top: 250px;
+}
+
+p {
+    margin-left: 300px;
+    margin-right: 300px;
+    font-size: larger;
+
+}
+
+#startQ {
+    size: 300px;
+    background-color: rgb(58, 134, 164);
+    border-radius: 30px;
+    cursor: pointer;
 }
