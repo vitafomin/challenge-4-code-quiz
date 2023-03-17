@@ -7,54 +7,68 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- <header>
-        <h1 id="timer" data-state="visible"> Time: </h1>
-        <h1 id="codeHeader1" data-state="visible">The Coding Quiz Challenge</h1>
-        <p id="codeP1">Answer the following coding questions! You will have 60 seconds to answer each question correctly. If you answer and question incorrectly you will be pentalized by your score/ time by 5 Seconds. GOOD LUCK!</p> -->
-        <button id="startQ">Start Quiz</button>
-    </header>
+    <!-- <div class="container">
+        <div id="questionsCon" class="hide"></div>
+        <div class=""></div> -->
+    </div>
+        <a href="#">View HighScores </a>
+    <div id="timer" data-state="visible"> Time: </div>
+
     <div class="container">
         <h2 class="codeQuiz"> The Coding Quiz Challenge</h2>
-        <div id="timer" data-state="visible"> Time: </div>
-    
-        <div class="questions" id="questions">
-            <h2 id="questionText"></h2>
-            <div id="questionAnswers"></div>
-             <h3 id="notify"></h3>
-
-        </div>
-        <div>
-            <p id="codeP1">Answer the following coding questions! You will have 60 seconds to answer each question correctly. If you answer and question incorrectly you will be pentalized by your score/ time by 5 Seconds. GOOD LUCK!</p>
+        
+        <div id="welcomingTag">
+            <p>Answer the following coding questions! You will have 60 seconds to answer each question correctly. If you answer and question incorrectly you will be pentalized by your score/ time by 5 Seconds. GOOD LUCK!</p>
             <button id="startQ">Start Quiz</button>
         </div>
+
+        <div id="questions" >
+            <h2 id="questionText"> What is NOT a commonly used primative data type: </h2>
+            <div id="questionAnswers">
+                <button> 1. Booleans </button>
+                <button> 2. Alerts </button>
+                <button> 3. Numbers </button>
+                <button> 4. Strings </button>
+            </div>
+        </div>    
+        <div id="questions2">  
+            <h2 class="questionText2"> What tool is used for debugging, that prints to the console of the browser </h2>
+            <div id="questionAnswers2">
+                <button> 1. var = </button>
+                <button> 2. console.log </button>
+                <button> 3. html </button>
+                <button> 4. for loops </button>
+            </div>
+        </div>  
+        <div id="questions3"> 
+            <h2 class="questionText3"> What is one complex data type </h2>
+            <div id="questionAnswers3">
+                <button> 1. VS Code </button>
+                <button> 2. Element </button>
+                <button> 3. Array </button>
+                <button> 4. Flex Direction </button>
+            </div>
+        </div>  
+        <div id="notify">
+            <h3 id="correct">CORRECT!</h3>
+            <h3 id="wrong">WRONG!</h3>
+        </div> 
+            
+    </div>
+    
+        
         <div id="totalScore">
              <h4 id="score">
                 <input type="text" class="form" placeholder="Please enter your Initials">
-                <button id="socreSubmit">Enter</button>
+                <button id="nameSubmit">Enter</button>
              </h4>
          </div>
     </div>
+        
+        
 
-        <!-- <div class="question1" data-text="What is NOT a commonly used primative data type: " data-state="hidden">
-            <button data-text = "a: numbers" data-state="hidden"></button>
-            <button data-text = "b: methods" data-state="hidden"></button>
-            <button data-text = "c: booleans" data-state="hidden"></button>
-            <button data-text = "d: strings" data-state="hidden"></button>
-        </div>
-        <div class="question2" data-text="What tool is used for debugging, that prints to the console of the browser" data-state="hidden">
-            <button data-text = "a: var =" data-state="hidden"></button>
-            <button data-text = "b: console.log" data-state="hidden"></button>
-            <button data-text = "c: html" data-state="hidden"></button>
-            <button data-text = "d: for loops" data-state="hidden"></button>
-        </div>
-        <div class="question3" data-text="What is one comlpex data type" data-state="hidden">
-            <button data-text = "a: VS Code" data-state="hidden"></button>
-            <button data-text = "b: Element" data-state="hidden"></button>
-            <button data-text = "c: Flex Direction" data-state="hidden"></button>
-            <button data-text = "d: Array" data-state="hidden"></button>
-        </div> -->
         <!-- <h1 id="timer"> Time: </h1> -->
-    </div>
+    </div> 
     <script src="script.js"></script> 
 </body>
 </html>
