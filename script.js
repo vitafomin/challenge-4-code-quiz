@@ -93,6 +93,10 @@ function compareAnswers(choice) {
 
 
     }
+    setInterval ( function () {
+        notify.classList.add("hide");
+
+    }, 800); 
     
     nextQuestion2()
 }
@@ -146,12 +150,17 @@ function compareAnswers2(choice2) {
         correct.classList.add("hide");
         timeLeft = timeLeft - 5;
         scoreCount = scoreCount - 5; 
-        score.textContent = "Score: " + scoreCount;
-
-
+        score.textContent = "Score: " + scoreCount; 
+        
     }
+    setInterval ( function () {
+        notify.classList.add("hide");
+
+    }, 800); 
+    
     nextQuestion3 ()
-}
+    }
+
 
 function nextQuestion3 () {
     console.log("started next question 3");
@@ -207,6 +216,12 @@ function compareAnswers3(choice3) {
         score.textContent = "Score: " + scoreCount;
 
     }
+
+    setInterval ( function () {
+        notify.classList.add("hide");
+
+    }, 1000); 
+
 }
 
 
