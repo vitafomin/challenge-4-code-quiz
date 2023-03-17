@@ -222,6 +222,9 @@ function compareAnswers3(choice3) {
 
     }, 1000); 
 
+    conatainer.classList.add("hide");
+    gameover.classList.remove("hide");
+
 }
 
 
