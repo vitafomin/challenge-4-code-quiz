@@ -48,12 +48,86 @@ body{
     margin-right: 500;
 } 
 
+#questionAnswers2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 500;
+    margin-right: 500;
+} 
+
+#questionAnswers3 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 500;
+    margin-right: 500;
+} 
+
+.btn1 {
+    height: 40px;
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 5px 5px 5px black;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    cursor: pointer;
+    zoom: 105%;
+}
+
+.btn2 {
+    height: 40px;
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 5px 5px 5px black;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    cursor: pointer;
+    zoom: 105%;
+}
+
+.btn3 {
+    height: 40px;
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 5px 5px 5px black;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    cursor: pointer;
+    zoom: 105%;
+}
+
+.btn4 {
+    height: 40px;
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 5px 5px 5px black;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    cursor: pointer;
+    zoom: 105%;
+}
+
+#notify {
+    text-align: center;
+    font-size: xx-large;
+}
+
 #questions2 {
     text-align: center;
  }
 
  #questions3 {
     text-align: center;
+ }
+
+ #gameover {
+    text-align: center;
+    margin-top: 200px;
+    font-size: 200px;
+    color: rgb(86, 70, 70);
  }
 
 .hide {

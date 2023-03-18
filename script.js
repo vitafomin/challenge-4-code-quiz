@@ -96,7 +96,7 @@ function compareAnswers(choice) {
     setInterval ( function () {
         notify.classList.add("hide");
 
-    }, 800); 
+    }, 1000); 
     
     nextQuestion2()
 }
@@ -156,7 +156,7 @@ function compareAnswers2(choice2) {
     setInterval ( function () {
         notify.classList.add("hide");
 
-    }, 800); 
+    }, 1000); 
     
     nextQuestion3 ()
     }
@@ -222,6 +222,12 @@ function compareAnswers3(choice3) {
 
     }, 1000); 
 
+    endgame()
+}
+
+
+
+function endgame () {
     conatainer.classList.add("hide");
     gameover.classList.remove("hide");
 
@@ -229,12 +235,13 @@ function compareAnswers3(choice3) {
 
 
 
-var timeLeft = 60;
+var timeLeft = 30;
 
 function countdown() {
     var timeInterval = setInterval(function () {
-        timeLeft--;
+
         timer.textContent = "Time Left: " + timeLeft;
+        timeLeft--;
         
         if (timeLeft === 0) {
             conatainer.classList.add("hide");
