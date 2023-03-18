@@ -1,3 +1,4 @@
+// making variables that are taking a reference to certain elements
 var timer = document.getElementById("timer");
 var conatainer = document.querySelector(".container");
 var quizChallenge = document.querySelector(".codeQuiz");
@@ -25,6 +26,8 @@ var initialTextBox = document.getElementById("initialTextBox")
 var gameover = document.getElementById("gameover");
 
 
+
+// adding and removing classes to different varibale
 questions.classList.add("hide");
 totalScore.classList.add("hide");
 notify.classList.add("hide");
@@ -36,11 +39,15 @@ initials.classList.add("hide");
 initialTextBox.classList.add("hide");
 gameover.classList.add("hide");
 
+
+// this is the click event, and it will execute the function "startQuiz"
 startBtn.addEventListener("click", startQuiz) 
 
 
+// the function that will be executed when the click event occurs
 function startQuiz () {
     console.log("started quiz");
+
     // after the button is clicked then we start our timer
     countdown();
     welcome.classList.add("hide");
@@ -55,15 +62,14 @@ function startQuiz () {
         var userAnswer = event.target.textContent;
 
         
-        // now we have to compare their answer with the correct one(?)
-
+        // now we have to compare their answer with the correct one
         // we would have to PASS the data to another function
         compareAnswers(userAnswer)
           
     })
 }
-// we need a function to compare our users answer to the correct one
 
+// we need a function to compare our users answer to the correct one
 function compareAnswers(choice) {
     console.log("Data: ", choice);
 
@@ -101,10 +107,11 @@ function compareAnswers(choice) {
     nextQuestion2()
 }
 
+// function of the second question of the quiz 
 function nextQuestion2 () {
     console.log("started next question 1");
-    // after the button is clicked then we start our timer
-    // countdown();
+  
+    
     welcome.classList.add("hide");
     questions.classList.add("hide");
     questions2.classList.remove("hide");
@@ -119,13 +126,13 @@ function nextQuestion2 () {
         var userAnswer2 = event.target.textContent;
 
         
-        // now we have to compare their answer with the correct one(?)
-
+        // now we have to compare their answer with the correct one
         // we would have to PASS the data to another function
         compareAnswers2(userAnswer2)
     })
 }
 
+// now we need to compare user answer to the correct answer
 function compareAnswers2(choice2) {
     console.log("Data: ", choice2);
 
@@ -161,11 +168,10 @@ function compareAnswers2(choice2) {
     nextQuestion3 ()
     }
 
-
+// the third and final question that is being asked in the quiz 
 function nextQuestion3 () {
     console.log("started next question 3");
-    // after the button is clicked then we start our timer
-    // countdown();
+   
     welcome.classList.add("hide");
     questions.classList.add("hide");
     questions2.classList.add("hide");
@@ -181,7 +187,7 @@ function nextQuestion3 () {
         var userAnswer3 = event.target.textContent;
 
         
-        // now we have to compare their answer with the correct one(?)
+        // now we have to compare their answer with the correct one
 
         // we would have to PASS the data to another function
         compareAnswers3(userAnswer3)
@@ -226,7 +232,7 @@ function compareAnswers3(choice3) {
 }
 
 
-
+//our final function of our code that ends the quiz
 function endgame () {
     conatainer.classList.add("hide");
     gameover.classList.remove("hide");
@@ -234,9 +240,10 @@ function endgame () {
 }
 
 
-
+// this variable is in the global scope so other functions can use it as well
 var timeLeft = 30;
 
+// this is the countdown function that starts our timer when the quiz has started
 function countdown() {
     var timeInterval = setInterval(function () {
 
@@ -253,8 +260,7 @@ function countdown() {
     }, 1000);
 }
 
-// this is calling a function
-//countdown();
+
 
     
 
