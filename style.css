@@ -31,10 +31,11 @@ body{
 
  #startQ {
     margin-left: 48%;
-    size: 600px;
+    font-size: larger;
     background-color: rgb(187, 203, 213);
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
+    box-shadow: 5px 5px 5px;
 } 
 
 #questions {
