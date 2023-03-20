@@ -24,7 +24,9 @@ var score = document.getElementById("score");
 scoreCount = 0
 var initialTextBox = document.getElementById("initialTextBox")
 var gameover = document.getElementById("gameover");
-
+var highscores = document.getElementById("highscores");
+var initialInput = document.getElementById("initialInput");
+var userValue = document.getElementById("userValue");
 
 
 // adding and removing classes to different varibale
@@ -35,9 +37,9 @@ questions2.classList.add("hide");
 questions3.classList.add("hide");
 correct.classList.add("hide");
 wrong.classList.add("hide");
-initials.classList.add("hide");
 initialTextBox.classList.add("hide");
 gameover.classList.add("hide");
+highscores.classList.add("hide");
 
 
 // this is the click event, and it will execute the function "startQuiz"
@@ -99,12 +101,12 @@ function compareAnswers(choice) {
 
 
     }
-    setInterval ( function () {
+    var notifyInterval = setInterval ( function () {
         notify.classList.add("hide");
-
+        clearInterval(notifyInterval);
+        nextQuestion2()
     }, 1000); 
     
-    nextQuestion2()
 }
 
 // function of the second question of the quiz 
@@ -160,12 +162,12 @@ function compareAnswers2(choice2) {
         score.textContent = "Score: " + scoreCount; 
         
     }
-    setInterval ( function () {
+    var notifyInterval = setInterval ( function () {
         notify.classList.add("hide");
-
+        clearInterval(notifyInterval);
+        nextQuestion3 ()
     }, 1000); 
     
-    nextQuestion3 ()
     }
 
 // the third and final question that is being asked in the quiz 
@@ -223,25 +225,61 @@ function compareAnswers3(choice3) {
 
     }
 
-    setInterval ( function () {
+    var notifyInterval = setInterval ( function () {
+        console.log("interval log");
         notify.classList.add("hide");
-
+        clearInterval(notifyInterval);
+        endgame()
     }, 1000); 
-
-    endgame()
 }
 
 
 //our final function of our code that ends the quiz
 function endgame () {
+    console.log("endgame log");
     conatainer.classList.add("hide");
     gameover.classList.remove("hide");
 
+    var endgameInterval = setInterval( function () {
+        gameover.classList.remove("hide");
+        clearInterval(endgameInterval)
+        getScores();
+    }, 1000);
+    
+
+}
+
+function getScores () {
+
+    initialTextBox.classList.remove("hide");
+    gameover.classList.add("hide");
+    
+    initials.addEventListener ("click", function () {
+        initialTextBox.classList.add("hide");
+        highscores.classList.remove("hide");
+       
+        var user = {
+            initial: initialInput.value,
+            score: scoreCount
+        };
+        localStorage.setItem(initialInput.value, JSON.stringify(user));
+        applyScores();
+    }) 
+
+}
+
+function  applyScores() {
+    var length = localStorage.length;
+    for (var i = 0; i < length; i++) {
+        var user = JSON.parse(localStorage.key(i));
+        console.log(user);
+    }
 }
 
 
+
 // this variable is in the global scope so other functions can use it as well
-var timeLeft = 30;
+var timeLeft = 200;
 
 // this is the countdown function that starts our timer when the quiz has started
 function countdown() {
