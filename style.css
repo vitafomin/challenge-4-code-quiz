@@ -139,3 +139,19 @@ body{
 .show {
     display: block;
 }
+
+#initialTextBox {
+    margin-top: 200px;
+
+    text-align: center;
+    
+}
+
+#highscores {
+    text-align: center;
+    font-size: 50px;
+}
+
+#uservalue {
+    text-align: center;
+}

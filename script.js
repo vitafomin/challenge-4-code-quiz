@@ -269,17 +269,31 @@ function getScores () {
 }
 
 function  applyScores() {
+    var user = {
+        initial: initialInput.value,
+        score: scoreCount
+    };
+    var lastScore = JSON.parse(localStorage.getItem("user"));
+    console.log(user)
+
+
+    // if (lastScore !== null) {
+    //     userVlaue.textContent = user.initial + " - " + user.score
+    // };
     var length = localStorage.length;
+
     for (var i = 0; i < length; i++) {
         var user = JSON.parse(localStorage.key(i));
         console.log(user);
-    }
+
+        userValue.textContent = user.initial + " - " + user.score
+    };
 }
 
 
 
 // this variable is in the global scope so other functions can use it as well
-var timeLeft = 200;
+var timeLeft = 30;
 
 // this is the countdown function that starts our timer when the quiz has started
 function countdown() {
