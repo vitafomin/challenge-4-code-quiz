@@ -1,6 +1,6 @@
 // making variables that are taking a reference to certain elements
 var timer = document.getElementById("timer");
-var conatainer = document.querySelector(".container");
+var container = document.querySelector(".container");
 var quizChallenge = document.querySelector(".codeQuiz");
 var welcome = document.getElementById("welcomingTag");
 var startBtn = document.getElementById("startQ");
@@ -237,7 +237,7 @@ function compareAnswers3(choice3) {
 //our final function of our code that ends the quiz
 function endgame () {
     console.log("endgame log");
-    conatainer.classList.add("hide");
+    container.classList.add("hide");
     gameover.classList.remove("hide");
 
     var endgameInterval = setInterval( function () {
@@ -246,8 +246,9 @@ function endgame () {
         getScores();
     }, 1000);
     
-
 }
+
+// this functions moves the user initial and score to the local storage
 
 function getScores () {
 
@@ -262,31 +263,33 @@ function getScores () {
             initial: initialInput.value,
             score: scoreCount
         };
-        localStorage.setItem(initialInput.value, JSON.stringify(user));
+        var initials = JSON.parse(localStorage.getItem("user")) || [];
+        console.log(initials)
+        initials.push(user);
+
+    
+
+        localStorage.setItem("user", JSON.stringify(initials));
         applyScores();
     }) 
 
 }
 
+// this function displays the highscores on to the page
+
 function  applyScores() {
-    var user = {
-        initial: initialInput.value,
-        score: scoreCount
-    };
-    var lastScore = JSON.parse(localStorage.getItem("user"));
-    console.log(user)
 
+    
 
-    // if (lastScore !== null) {
-    //     userVlaue.textContent = user.initial + " - " + user.score
-    // };
-    var length = localStorage.length;
+    var initials = JSON.parse(localStorage.getItem("user"));
 
-    for (var i = 0; i < length; i++) {
-        var user = JSON.parse(localStorage.key(i));
-        console.log(user);
+    for (var i = 0; i < initials.length; i++) {
+        var pEl = document.createElement("p")
+        pEl.setAttribute("class", "list");
 
-        userValue.textContent = user.initial + " - " + user.score
+        pEl.textContent = initials[i].initial + " - " + initials[i].score;
+
+        userValue.appendChild(pEl);  
     };
 }
 
@@ -303,7 +306,7 @@ function countdown() {
         timeLeft--;
         
         if (timeLeft === 0) {
-            conatainer.classList.add("hide");
+            container.classList.add("hide");
             gameover.classList.remove("hide");
             clearInterval(timeInterval);
             timer.textContent = " ";
